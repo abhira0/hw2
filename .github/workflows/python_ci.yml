@@ -67,7 +67,7 @@ jobs:
     - name: Update README with badge
       run: |
         BADGE_COLOR=$(if [ $? -eq 0 ]; then echo "passing-brightgreen"; else echo "failing-red"; fi)
-        BADGE_URL="https://img.shields.io/badge/pyright-${BADGE_COLOR}.svg"
+        BADGE_URL="https://img.shields.io/badge/pyright-${{ BADGE_COLOR }}.svg"
         sed -i '/!\[Pyright Analysis\]/c\![Pyright Analysis]('"$BADGE_URL"')' README.md
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
