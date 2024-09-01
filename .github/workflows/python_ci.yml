@@ -60,21 +60,17 @@ jobs:
     - name: Clean pylint files
       run: |
         rm -rf pylint_score.txt
+
     - name: Run pyright
       run: |
         pyright src/* tests/*
         echo "PYRIGHT_EXIT_CODE=$?" >> $GITHUB_ENV
       continue-on-error: true 
-    - name: Determine pyright badge color
-      run: |
-        if [ "${{ env.PYRIGHT_EXIT_CODE }}" -eq 0 ]; then
-          echo "PYRIGHT_BADGE_COLOR=passing-brightgreen" >> $GITHUB_ENV
-        else
-          echo "PYRIGHT_BADGE_COLOR=failing-red" >> $GITHUB_ENV
-        fi
+
     - name: Update README with pyright badge
       run: |
-        BADGE_URL="https://img.shields.io/badge/pyright-${{ env.PYRIGHT_BADGE_COLOR }}.svg"
+        BADGE_COLOR=$( [ $PYRIGHT_EXIT_CODE -eq 0 ] && echo "passing-brightgreen" || echo "failing-red" )
+        BADGE_URL="https://img.shields.io/badge/pyright-${BADGE_COLOR}.svg"
         echo "Updating README with badge URL: $BADGE_URL"
         sed -i '/!\[Pyright Analysis\]/c\![Pyright Analysis]('"$BADGE_URL"')' README.md
         git config --global user.name "github-actions[bot]"
