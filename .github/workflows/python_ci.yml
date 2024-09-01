@@ -51,6 +51,7 @@ jobs:
     - name: Run pylint
       run: |
         pylint src tests > tmp/pylint_output.txt || echo "PYLINT_EXIT_CODE=$?" >> $GITHUB_ENV
+        cat tmp/pylint_output.txt
       continue-on-error: true 
 
     - name: Run pyright
@@ -108,34 +109,6 @@ jobs:
         echo "Code coverage badge URL: $CODE_COVERAGE_BADGE_URL"
         echo "PyTest status badge URL: $PYTEST_STATUS_BADGE_URL"
 
-
-    - name: Update README with pylint badge
-      run: |
-        SCORE=$(grep -oP '(?<=rated at )[0-9]+\.[0-9]+' tmp/pylint_output.txt)
-        if [ "$(echo "$SCORE < 5" | bc)" -eq 1 ]; then
-          COLOR="red"
-        elif [ "$(echo "$SCORE < 8" | bc)" -eq 1 ]; then
-          COLOR="orange"
-        elif [ "$(echo "$SCORE < 10" | bc)" -eq 1 ]; then
-          COLOR="yellow"
-        else
-          COLOR="brightgreen"
-        fi
-
-        # Generate badge URL
-        PYLINT_BADGE_URL="https://img.shields.io/badge/pylint-${SCORE}-${COLOR}"
-        echo "PYLINT_BADGE_URL=$PYLINT_BADGE_URL" >> $GITHUB_ENV
-        echo "PyTest status badge URL: $PYLINT_BADGE_URL"
-
-
-    - name: Update README with pyright badge
-      run: |
-        # Generate badge URL
-        BADGE_COLOR=$( [ $PYRIGHT_EXIT_CODE -eq 0 ] && echo "passing-brightgreen" || echo "failing-red" )
-        PYRIGHT_BADGE_URL="https://img.shields.io/badge/pyright-${BADGE_COLOR}"
-        echo "PYRIGHT_BADGE_URL=$PYRIGHT_BADGE_URL" >> $GITHUB_ENV
-        echo "PyTest status badge URL: $PYRIGHT_BADGE_URL"
-        
     - name: Update README with all the badges
       run: |
         sed -i '/!\[badge_pylint\]/c\![badge_pylint]('"$PYLINT_BADGE_URL"')' README.md
