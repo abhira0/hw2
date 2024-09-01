@@ -12,6 +12,8 @@ Second SE homework on Debugging
 ![python](https://img.shields.io/badge/python-3.13-blue?logo=python&logoColor=white)
 ![autopep8](https://img.shields.io/badge/code%20style-autopep8-blue)
 
+![GitHub repo size](https://img.shields.io/github/repo-size/gitsetgopack/hw2)
+
 ---
 ### Steps
 1. Install python requirements
