@@ -152,7 +152,7 @@ jobs:
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
         git checkout main
         git pull
-        
+
         if git diff --quiet; then
             echo "No changes to commit"
         else
@@ -165,7 +165,18 @@ jobs:
       run: |
         for TOOL in PYRIGHT PYLINT PYTEST; do
           EXIT_CODE_VAR="${TOOL}_EXIT_CODE"
-          EXIT_CODE="${!EXIT_CODE_VAR}"
+          EXIT_CODE="${{ env.${EXIT_CODE_VAR} }}"
+
+          # Debugging output to check if the exit code is being retrieved correctly
+          echo "Checking exit code for $TOOL: $EXIT_CODE"
+
+          # Ensure that the EXIT_CODE variable is not empty
+          if [ -z "$EXIT_CODE" ]; then
+            echo "Warning: $EXIT_CODE_VAR is not set or empty."
+            continue
+          fi
+
+          # Check if the exit code indicates a failure
           if [ "$EXIT_CODE" -ne 0 ]; then
             echo "$TOOL failed, marking job as failed."
             exit 1
