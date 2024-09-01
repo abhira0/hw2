@@ -66,13 +66,13 @@ jobs:
       id: badge_color
       run: |
         if [ $? -eq 0 ]; then
-          echo "::set-output name=color::brightgreen"
+          echo "brightgreen" >> $PYRIGHT_BADGE_COLOR
         else
-          echo "::set-output name=color::red"
+          echo "red" >> $PYRIGHT_BADGE_COLOR
         fi
     - name: Update README with badge
       run: |
-        BADGE_URL="https://img.shields.io/badge/pyright-${{ steps.badge_color.outputs.color }}.svg"
+        BADGE_URL="https://img.shields.io/badge/pyright-${{ PYRIGHT_BADGE_COLOR }}.svg"
         sed -i '/!\[Pyright Analysis\]/c\![Pyright Analysis]('"$BADGE_URL"')' README.md
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
