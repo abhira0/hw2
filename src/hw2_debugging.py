@@ -1,7 +1,4 @@
 """Module with very intense sorting :p. I'm kidding, its just mergesort!"""
-from src import rand
-
-
 def merge_sort(array:list[int]) -> list[int]:
     """Sort the given array using the algorithm mergesort."""
     if not array:
