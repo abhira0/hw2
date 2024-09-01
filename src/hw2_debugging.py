@@ -1,5 +1,7 @@
 """Module with very intense sorting :p. I'm kidding, its just mergesort!"""
-def merge_sort(array:list[int]) -> list[int]:
+
+
+def merge_sort(array: list[int]) -> list[int]:
     """Sort the given array using the algorithm mergesort."""
     if not array:
         return array
@@ -11,7 +13,7 @@ def merge_sort(array:list[int]) -> list[int]:
     return recombine(merge_sort(array[:half]), merge_sort(array[half:]))
 
 
-def recombine(left_arr:list[int], right_arr:list[int]) -> list[int]:
+def recombine(left_arr: list[int], right_arr: list[int]) -> list[int]:
     """By taking two arrays, merge the sort by actually implementing the mergesort algorithm."""
     left_index = 0
     right_index = 0
