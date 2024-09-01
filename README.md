@@ -4,6 +4,12 @@ Second SE homework on Debugging
 ---
 ### Steps
 1. Running autopep8 on all files
-```bash
-autopep8 -i src/*
-```
+    ```bash
+    autopep8 -i src/*
+    ```
+2. Running pylint
+   ```bash
+   pylint src/* >> src/post_traces/pylint.txt # first time
+   pylint src/* # iteratively
+   ```
+3. 
