@@ -49,16 +49,20 @@ jobs:
     - name: Run pylint
       continue-on-error: true
       run: |
-        pylint src tests > tmp/pylint_output.txt && echo "PYLINT_EXIT_CODE=$?" >> $GITHUB_ENV
+        echo "PYLINT_EXIT_CODE=0" >> $GITHUB_ENV
+        pylint src tests > tmp/pylint_output.txt || echo "PYLINT_EXIT_CODE=$?" >> $GITHUB_ENV
         cat tmp/pylint_output.txt
     - name: Run pyright
       continue-on-error: true
       run: |
-        pyright src/* tests/* && echo "PYRIGHT_EXIT_CODE=$?" >> $GITHUB_ENV
+        echo "PYRIGHT_EXIT_CODE=0" >> $GITHUB_ENV
+        pyright src/* tests/* || echo "PYRIGHT_EXIT_CODE=$?" >> $GITHUB_ENV
     - name: Run pytest
       continue-on-error: true
       run: |
-        pytest --cov=src --cov-report=json:tmp/coverage.json --junitxml=tmp/pytest_output.xml && echo "PYTEST_EXIT_CODE=$?" >> $GITHUB_ENV
+        echo "PYTEST_EXIT_CODE=0" >> $GITHUB_ENV
+        pytest --cov=src --cov-report=json:tmp/coverage.json --junitxml=tmp/pytest_output.xml || echo "PYTEST_EXIT_CODE=$?" >> $GITHUB_ENV
+
     - name: Extract number of tests, coverage, and determine result
       run: |
         NUM_TESTS=$(xmllint --xpath 'string(//testsuite/@tests)' tmp/pytest_output.xml)
