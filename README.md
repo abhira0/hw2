@@ -9,7 +9,8 @@ Second SE homework on Debugging
 ![badge_total_tests](https://img.shields.io/badge/tests-7-brightgreen.svg)
 ![badge_pylint](https://img.shields.io/badge/pylint-10.00-brightgreen.svg)
 ![badge_pyright](https://img.shields.io/badge/pyright-passing-brightgreen.svg)
-![autopep8](https://img.shields.io/badge/code%20style-autopep8-brightgreen)
+![python](https://img.shields.io/badge/python-3.13-blue?logo=python&logoColor=white)
+![autopep8](https://img.shields.io/badge/code%20style-autopep8-blue)
 
 ---
 ### Steps
