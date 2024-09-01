@@ -44,7 +44,6 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-
     - name: Run pylint
       run: |
         mkdir tmp
@@ -58,20 +57,16 @@ jobs:
         echo "PYRIGHT_EXIT_CODE=$?" >> $GITHUB_ENV
       continue-on-error: true 
 
-
     - name: Run pytest and capture output
       run: |
-        pytest --cov=src --cov-report=term > pytest_output.txt
+        pytest --cov=src --cov-report=json:tmp/coverage.json --junitxml=tmp/pytest_output.xml
         echo "PYTEST_EXIT_CODE=$?" >> $GITHUB_ENV
       continue-on-error: true
 
     - name: Extract number of tests, coverage, and determine result
       run: |
-        # Extract the number of tests
-        NUM_TESTS=$(grep -oP 'collected \K[0-9]+' pytest_output.txt)
-
-        # Extract the coverage percentage
-        COVERAGE=$(grep -oP '(?<=TOTAL\s+)\d+%' pytest_output.txt | tr -d '%')
+        NUM_TESTS=$(xmllint --xpath 'string(//testsuite/@tests)' tmp/pytest_output.xml)
+        COVERAGE=$(jq '.totals.percent_covered' tmp/coverage.json | awk '{printf "%.0f", $1}')
 
         # Determine the result of the tests
         if [ ${{ env.PYTEST_EXIT_CODE }} -eq 0 ]; then
