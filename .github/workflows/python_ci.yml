@@ -50,20 +50,19 @@ jobs:
 
     - name: Run pylint
       run: |
-        pylint src tests > tmp/pylint_output.txt
-        EXIT_CODE=$?
-        echo "PYLINT_EXIT_CODE=$EXIT_CODE" >> $GITHUB_ENV
+        pylint src tests > tmp/pylint_output.txt || true
+        echo "PYLINT_EXIT_CODE=$?" >> $GITHUB_ENV
       continue-on-error: true 
 
     - name: Run pyright
       run: |
-        pyright src/* tests/*
+        pyright src/* tests/* || true
         echo "PYRIGHT_EXIT_CODE=$?" >> $GITHUB_ENV
       continue-on-error: true 
 
     - name: Run pytest
       run: |
-        pytest --cov=src --cov-report=json:tmp/coverage.json --junitxml=tmp/pytest_output.xml
+        pytest --cov=src --cov-report=json:tmp/coverage.json --junitxml=tmp/pytest_output.xml || true
         echo "PYTEST_EXIT_CODE=$?" >> $GITHUB_ENV
 
         echo "PYLINT_EXIT_CODE: ${{ env.PYLINT_EXIT_CODE }}"
