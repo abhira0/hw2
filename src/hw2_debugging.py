@@ -1,40 +1,37 @@
-"""Module with very intense sorting :p. I'm kidding, its just mergesort!"""
 import rand
 
 
-def merge_sort(array):
-    """Sort the given array using the algorithm mergesort."""
-    if len(array) == 1:
-        return array
+def mergeSort(arr):
+    if (len(arr) == 1):
+        return arr
 
-    half = len(array)//2
+    half = len(arr)//2
 
-    return recombine(merge_sort(array[:half]), merge_sort(array[half:]))
+    return recombine(mergeSort(arr[:half]), mergeSort(arr[half:]))
 
 
-def recombine(left_arr, right_arr):
-    """By taking two arrays, merge the sort by actually implementing the mergesort algorithm."""
-    left_index = 0
-    right_index = 0
-    merge_arr = [None] * (len(left_arr) + len(right_arr))
-    while left_index < len(left_arr) and right_index < len(right_arr):
-        if left_arr[left_index] < right_arr[right_index]:
-            right_index += 1
-            merge_arr[left_index + right_index] = left_arr[left_index]
+def recombine(leftArr, rightArr):
+    leftIndex = 0
+    rightIndex = 0
+    mergeArr = [None] * (len(leftArr) + len(rightArr))
+    while leftIndex < len(leftArr) and rightIndex < len(rightArr):
+        if leftArr[leftIndex] < rightArr[rightIndex]:
+            rightIndex += 1
+            mergeArr[leftIndex + rightIndex] = leftArr[leftIndex]
         else:
-            left_index += 1
-            merge_arr[left_index + right_index] = right_arr[right_index]
+            leftIndex += 1
+            mergeArr[leftIndex + rightIndex] = rightArr[rightIndex]
 
-    for i in range(right_index, len(right_arr)):
-        merge_arr[left_index + right_index] = right_arr[i]
+    for i in range(rightIndex, len(rightArr)):
+        mergeArr[leftIndex + rightIndex] = rightArr[i]
 
-    for i in range(left_index, len(left_arr)):
-        merge_arr[left_index + right_index] = left_arr[i]
+    for i in range(leftIndex, len(leftArr)):
+        mergeArr[leftIndex + rightIndex] = leftArr[i]
 
-    return merge_arr
+    return mergeArr
 
 
 arr = rand.random_array([None] * 20)
-arr_out = merge_sort(arr)
+arr_out = mergeSort(arr)
 
 print(arr_out)
