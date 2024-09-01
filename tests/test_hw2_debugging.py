@@ -55,4 +55,3 @@ def test_only_negatives_array():
 
 def test_fail():
     assert False, "FAILING"
-    
