@@ -4,15 +4,34 @@ Second SE homework on Debugging
 ---
 
 
+#### Quality
 ![badge_pytest_status](https://img.shields.io/badge/PyTest-passing-brightgreen?logo=pytest&logoColor=white)
 ![badge_code_coverage](https://img.shields.io/badge/coverage-100%25-brightgreen)
 ![badge_total_tests](https://img.shields.io/badge/tests-7-blue?logo=pytest&logoColor=white)
 ![badge_pylint](https://img.shields.io/badge/pylint-10.00-brightgreen)
 ![badge_pyright](https://img.shields.io/badge/pyright-passing-brightgreen)
-![python](https://img.shields.io/badge/python-3.13-blue?logo=python&logoColor=white)
-![autopep8](https://img.shields.io/badge/code%20style-autopep8-blue)
 
-![GitHub repo size](https://img.shields.io/github/repo-size/gitsetgopack/hw2)
+#### Standards
+![autopep8](https://img.shields.io/badge/code%20style-autopep8-blue)
+![license](https://img.shields.io/github/license/gitsetgopack/hw2)
+
+#### Stats
+![repo_size](https://img.shields.io/github/repo-size/gitsetgopack/hw2)
+![pr_open](https://img.shields.io/github/issues-pr/gitsetgopack/hw2)
+![pr_close](https://img.shields.io/github/issues-pr-closed/gitsetgopack/hw2)
+![forks](https://img.shields.io/github/forks/gitsetgopack/hw2?style=flat)
+![stars](https://img.shields.io/github/stars/gitsetgopack/hw2?style=flat)
+![downloads](https://img.shields.io/github/downloads/gitsetgopack/hw2/total)
+
+   
+#### Tools & Technologies
+![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white)
+![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
+![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+![Python](https://img.shields.io/badge/python%203.13-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+
+
 
 ---
 ### Steps
