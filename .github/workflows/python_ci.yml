@@ -30,8 +30,8 @@ jobs:
         autopep8 --in-place --recursive .
     - name: Commit changes
       run: |
-        git config --global user.name "github-actions[bot]"
-        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git config --global user.name 'abhira0'
+        git config --global user.email 'abhira0@users.noreply.github.com'
         git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
         git checkout main
         git pull
