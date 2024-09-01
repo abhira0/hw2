@@ -39,8 +39,10 @@ jobs:
       uses: actions/setup-python@v3
       with:
         python-version: "3.12"
-    - name: Install xmllint
-      run: sudo apt-get install -y libxml2-utils
+    - name: Setup
+      run: |
+        mkdir tmp
+        sudo apt-get install -y libxml2-utils
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
@@ -48,7 +50,6 @@ jobs:
 
     - name: Run pylint
       run: |
-        mkdir tmp
         pylint src tests > tmp/pylint_output.txt
         echo "PYLINT_EXIT_CODE=$?" >> $GITHUB_ENV
       continue-on-error: true 
@@ -97,7 +98,7 @@ jobs:
         # Generate badge URLs
         TESTS_BADGE_URL="https://img.shields.io/badge/tests-${NUM_TESTS}-${TESTS_COLOR}.svg"
         COVERAGE_BADGE_URL="https://img.shields.io/badge/coverage-${COVERAGE}%25-${COVERAGE_COLOR}.svg"
-        STATUS_BADGE_URL="https://img.shields.io/badge/tests-${TESTS_STATUS}-${TESTS_COLOR}.svg"
+        STATUS_BADGE_URL="https://img.shields.io/badge/PyTest-${TESTS_STATUS}-${TESTS_COLOR}.svg"
 
         echo "Test Badge URL: $TESTS_BADGE_URL"
         echo "Coverage Badge URL: $COVERAGE_BADGE_URL"
