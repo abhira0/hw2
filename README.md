@@ -4,6 +4,7 @@ Second SE homework on Debugging
 ---
 
 ![pylint]()
+![Pyright Analysis](https://img.shields.io/badge/pyright-brightgreen.svg)
 
 ---
 ### Steps
