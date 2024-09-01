@@ -63,15 +63,16 @@ jobs:
     - name: Run pyright
       run: |
         pyright src/* tests/*
+        echo "PYRIGHT_EXIT_CODE=$?" >> $GITHUB_ENV
       continue-on-error: true 
-    - name: Determine badge color
+    - name: Determine pyright badge color
       run: |
-        if [ $? -eq 0 ]; then
+        if [ "${{ env.PYRIGHT_EXIT_CODE }}" -eq 0 ]; then
           echo "PYRIGHT_BADGE_COLOR=passing-brightgreen" >> $GITHUB_ENV
         else
           echo "PYRIGHT_BADGE_COLOR=failing-red" >> $GITHUB_ENV
         fi
-    - name: Update README with badge
+    - name: Update README with pyright badge
       run: |
         BADGE_URL="https://img.shields.io/badge/pyright-${{ env.PYRIGHT_BADGE_COLOR }}.svg"
         echo "Updating README with badge URL: $BADGE_URL"
@@ -85,6 +86,8 @@ jobs:
             git commit -am "Update Pyright badge in README"
             git push
         fi
+        
+        
   test:
     runs-on: ubuntu-latest
     steps:
