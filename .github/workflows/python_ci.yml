@@ -146,10 +146,10 @@ jobs:
         sed -i '/!\[badge_code_coverage\]/c\![badge_code_coverage]('"$CODE_COVERAGE_BADGE_URL"')' README.md
         sed -i '/!\[badge_pytest_status\]/c\![badge_pytest_status]('"$PYTEST_STATUS_BADGE_URL"')' README.md
 
+        rm -rf tmp
         
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
-        rm -rf tmp
         if git diff --quiet; then
             echo "No changes to commit"
         else
@@ -158,23 +158,12 @@ jobs:
             git push
         fi
         
-    - name: Fail if pyright failed
+    - name: Fail if any of them failed
       run: |
-        if [ ${{ env.PYRIGHT_EXIT_CODE }} -ne 0 ]; then
-          echo "Pyright failed, marking job as failed."
-          exit 1
-        fi
-        
-    - name: Fail if pylint failed
-      run: |
-        if [ ${{ env.PYLINT_EXIT_CODE }} -ne 0 ]; then
-          echo "Pylint failed, marking job as failed."
-          exit 1
-        fi
-
-    - name: Fail if pytest failed
-      run: |
-        if [ ${{ env.PYTEST_EXIT_CODE }} -ne 0 ]; then
-          echo "Pytest failed, marking job as failed."
-          exit 1
-        fi
+        for TOOL in PYRIGHT PYLINT PYTEST; do
+          EXIT_CODE=${{ env.${TOOL}_EXIT_CODE }}
+          if [ "$EXIT_CODE" -ne 0 ]; then
+            echo "$TOOL failed, marking job as failed."
+            exit 1
+          fi
+        done
