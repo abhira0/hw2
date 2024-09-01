@@ -50,24 +50,18 @@ jobs:
 
     - name: Run pylint
       run: |
-        pylint src tests > tmp/pylint_output.txt || true
-        echo "PYLINT_EXIT_CODE=$?" >> $GITHUB_ENV
+        pylint src tests > tmp/pylint_output.txt || echo "PYLINT_EXIT_CODE=$?" >> $GITHUB_ENV
       continue-on-error: true 
 
     - name: Run pyright
       run: |
-        pyright src/* tests/* || true
-        echo "PYRIGHT_EXIT_CODE=$?" >> $GITHUB_ENV
+        pyright src/* tests/* || echo "PYRIGHT_EXIT_CODE=$?" >> $GITHUB_ENV
       continue-on-error: true 
 
     - name: Run pytest
       run: |
-        pytest --cov=src --cov-report=json:tmp/coverage.json --junitxml=tmp/pytest_output.xml || true
-        echo "PYTEST_EXIT_CODE=$?" >> $GITHUB_ENV
+        pytest --cov=src --cov-report=json:tmp/coverage.json --junitxml=tmp/pytest_output.xml || echo "PYTEST_EXIT_CODE=$?" >> $GITHUB_ENV
 
-        echo "PYLINT_EXIT_CODE: ${{ env.PYLINT_EXIT_CODE }}"
-        echo "PYRIGHT_EXIT_CODE: ${{ env.PYRIGHT_EXIT_CODE }}"
-        echo "PYTEST_EXIT_CODE: ${{ env.PYTEST_EXIT_CODE }}"
       continue-on-error: true
 
     - name: Extract number of tests, coverage, and determine result
