@@ -57,8 +57,10 @@ jobs:
         color-ok-score: orange # [5,8)
         color-good-score: yellow # [8,10)
         color-perfect-score: brightgreen # pylint scores == 10
+    - name: Clean pylint files
+      run: |
+        rm -rf pylint_score.txt
     - name: Run pyright
-      id: pyright
       run: |
         pyright src/* tests/*
       continue-on-error: true 
@@ -73,7 +75,6 @@ jobs:
       run: |
         BADGE_URL="https://img.shields.io/badge/pyright-${{ env.PYRIGHT_BADGE_COLOR }}.svg"
         sed -i '/!\[Pyright Analysis\]/c\![Pyright Analysis]('"$BADGE_URL"')' README.md
-        git status
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
         git add README.md
