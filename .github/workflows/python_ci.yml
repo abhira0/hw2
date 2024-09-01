@@ -51,7 +51,8 @@ jobs:
     - name: Run pylint
       run: |
         pylint src tests > tmp/pylint_output.txt
-        echo "PYLINT_EXIT_CODE=$?" >> $GITHUB_ENV
+        EXIT_CODE=$?
+        echo "PYLINT_EXIT_CODE=$EXIT_CODE" >> $GITHUB_ENV
       continue-on-error: true 
 
     - name: Run pyright
