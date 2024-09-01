@@ -28,11 +28,21 @@ jobs:
     - name: Format code with autopep8
       run: |
         autopep8 --in-place --recursive .
+    - name: Commit changes
+      run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
-        git add .
-        git commit -m "Auto format code with autopep8" || echo "No changes to commit"
-        git push || echo "No changes to push"
+        git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
+        git checkout main
+        git pull
+        
+        # Check if there are any changes to commit
+        if git diff --quiet; then
+            echo "No changes to commit"
+        else
+            git commit -am "Formatting python files using autopep8"
+            git push
+        fi
 
   test:
     runs-on: ubuntu-latest
