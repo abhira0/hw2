@@ -73,6 +73,7 @@ jobs:
       run: |
         BADGE_URL="https://img.shields.io/badge/pyright-${{ env.PYRIGHT_BADGE_COLOR }}.svg"
         sed -i '/!\[Pyright Analysis\]/c\![Pyright Analysis]('"$BADGE_URL"')' README.md
+        git status
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
         git add README.md
