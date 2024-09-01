@@ -3,7 +3,7 @@ Second SE homework on Debugging
 
 ---
 
-![pylint]()
+![pylint](https://img.shields.io/badge/PyLint-10.00-brightgreen?logo=python&logoColor=white)
 
 ---
 ### Steps
