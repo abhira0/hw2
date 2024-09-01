@@ -64,7 +64,6 @@ jobs:
     - name: Run pylint
       run: |
         pylint src tests > pylint_output.txt
-        echo "PYLINT_OUTPUT=$(cat pylint_output.txt)" >> $GITHUB_ENV
         echo "PYLINT_EXIT_CODE=$?" >> $GITHUB_ENV
       continue-on-error: true 
 
@@ -76,7 +75,7 @@ jobs:
 
     - name: Update README with pylint badge
       run: |
-        SCORE=$(echo "$PYLINT_OUTPUT" | grep -oP '(?<=rated at )[0-9]+\.[0-9]+')
+        SCORE=$(grep -oP '(?<=rated at )[0-9]+\.[0-9]+' pylint_output.txt)
         if [ "$SCORE" -lt 5 ]; then
           COLOR="red"
         elif [ "$SCORE" -lt 8 ]; then
