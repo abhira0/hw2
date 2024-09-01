@@ -34,10 +34,3 @@ def recombine(left_arr:list[int], right_arr:list[int]) -> list[int]:
         merge_arr[i + right_index] = left_arr[i]
 
     return merge_arr
-
-
-arr = rand.random_array([None] * 10)
-arr = [9, 7, 11, 3, 13, 17, 8, 17, 4, 7]
-arr_out = merge_sort(arr)
-
-print(arr_out)

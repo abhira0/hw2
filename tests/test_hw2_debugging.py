@@ -10,7 +10,7 @@ def test_hardcoded_array():
 
 def test_random_array():
     """Array here is random."""
-    arr = random_array([None] * 20)
+    arr = random_array([0] * 20)
     merge_sorted_array = merge_sort(arr)
     assert merge_sorted_array == sorted(arr), "Array is not sorted"
 

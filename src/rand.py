@@ -2,7 +2,7 @@
 import subprocess
 
 
-def random_array(arr:list[None|int]):
+def random_array(arr:list[int]):
     """Function that returns random elements in an array by using 'shuf' cli tool."""
     shuffled_num = None
     for i, _ in enumerate(arr):
