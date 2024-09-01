@@ -1,1 +1,19 @@
+/workspaces/hw2/src/hw2_debugging.py
+  /workspaces/hw2/src/hw2_debugging.py:24:13 - error: No overloads for "__setitem__" match the provided arguments (reportCallIssue)
+  /workspaces/hw2/src/hw2_debugging.py:24:13 - error: Argument of type "int" cannot be assigned to parameter "value" of type "None" in function "__setitem__"
+    "int" is not assignable to "None" (reportArgumentType)
+  /workspaces/hw2/src/hw2_debugging.py:27:13 - error: No overloads for "__setitem__" match the provided arguments (reportCallIssue)
+  /workspaces/hw2/src/hw2_debugging.py:27:13 - error: Argument of type "int" cannot be assigned to parameter "value" of type "None" in function "__setitem__"
+    "int" is not assignable to "None" (reportArgumentType)
+  /workspaces/hw2/src/hw2_debugging.py:31:9 - error: No overloads for "__setitem__" match the provided arguments (reportCallIssue)
+  /workspaces/hw2/src/hw2_debugging.py:31:9 - error: Argument of type "int" cannot be assigned to parameter "value" of type "None" in function "__setitem__"
+    "int" is not assignable to "None" (reportArgumentType)
+  /workspaces/hw2/src/hw2_debugging.py:34:9 - error: No overloads for "__setitem__" match the provided arguments (reportCallIssue)
+  /workspaces/hw2/src/hw2_debugging.py:34:9 - error: Argument of type "int" cannot be assigned to parameter "value" of type "None" in function "__setitem__"
+    "int" is not assignable to "None" (reportArgumentType)
+  /workspaces/hw2/src/hw2_debugging.py:36:12 - error: Type "list[None]" is not assignable to return type "list[int]"
+    "list[None]" is not assignable to "list[int]"
+      Type parameter "_T@list" is invariant, but "None" is not the same as "int"
+      Consider switching from "list" to "Sequence" which is covariant (reportReturnType)
+9 errors, 0 warnings, 0 informations 
 0 errors, 0 warnings, 0 informations 

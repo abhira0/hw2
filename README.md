@@ -17,3 +17,7 @@ Second SE homework on Debugging
    pyright src/* >> src/post_traces/pyright.txt # first time
    pyright src/* # iteratively
    ```
+4. Running pytest
+   ```bash
+   pytest
+   ```

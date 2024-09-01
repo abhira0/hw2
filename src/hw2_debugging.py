@@ -2,7 +2,7 @@
 import src.rand as rand
 
 
-def merge_sort(array):
+def merge_sort(array:list[int]) -> list[int]:
     """Sort the given array using the algorithm mergesort."""
     if not array:
         return array
@@ -14,11 +14,11 @@ def merge_sort(array):
     return recombine(merge_sort(array[:half]), merge_sort(array[half:]))
 
 
-def recombine(left_arr, right_arr):
+def recombine(left_arr:list[int], right_arr:list[int]) -> list[int]:
     """By taking two arrays, merge the sort by actually implementing the mergesort algorithm."""
     left_index = 0
     right_index = 0
-    merge_arr = [None] * (len(left_arr) + len(right_arr))
+    merge_arr = [0] * (len(left_arr) + len(right_arr))
     while left_index < len(left_arr) and right_index < len(right_arr):
         if left_arr[left_index] < right_arr[right_index]:
             merge_arr[left_index + right_index] = left_arr[left_index]
