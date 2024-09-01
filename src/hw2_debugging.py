@@ -4,6 +4,8 @@ import src.rand as rand
 
 def merge_sort(array):
     """Sort the given array using the algorithm mergesort."""
+    if not array:
+        return array
     if len(array) == 1:
         return array
 
