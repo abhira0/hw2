@@ -47,7 +47,7 @@ jobs:
     - name: Setup
       run: |
         mkdir tmp
-        
+
     - name: Update PyLint dynamic badge on README.md
       uses: Silleellie/pylint-github-action@v2
       with:
@@ -68,6 +68,7 @@ jobs:
 
     - name: Run pylint
       run: |
+        mkdir tmp
         pylint src tests > tmp/pylint_output.txt
         echo "PYLINT_EXIT_CODE=$?" >> $GITHUB_ENV
       continue-on-error: true 
@@ -92,8 +93,8 @@ jobs:
         fi
 
         # Generate badge URL
-        BADGE_URL="https://img.shields.io/badge/pylint-${SCORE}/10-${COLOR}.svg"
-        echo $BADGE_URL
+        PYLINT_BADGE_URL="https://img.shields.io/badge/pylint-${SCORE}/10-${COLOR}.svg"
+        echo $PYLINT_BADGE_URL
 
 
     - name: Update README with pyright badge
