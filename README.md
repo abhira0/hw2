@@ -12,4 +12,8 @@ Second SE homework on Debugging
    pylint src/* >> src/post_traces/pylint.txt # first time
    pylint src/* # iteratively
    ```
-3. 
+3. Running pyright
+   ```bash
+   pyright src/* >> src/post_traces/pyright.txt # first time
+   pyright src/* # iteratively
+   ```
