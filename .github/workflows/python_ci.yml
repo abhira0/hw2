@@ -63,16 +63,15 @@ jobs:
         pyright src/* tests/*
       continue-on-error: true 
     - name: Determine badge color
-      id: badge_color
       run: |
         if [ $? -eq 0 ]; then
-          echo "brightgreen" >> $PYRIGHT_BADGE_COLOR
+          echo "PYRIGHT_BADGE_COLOR=brightgreen" >> $GITHUB_ENV
         else
-          echo "red" >> $PYRIGHT_BADGE_COLOR
+          echo "PYRIGHT_BADGE_COLOR=red" >> $GITHUB_ENV
         fi
     - name: Update README with badge
       run: |
-        BADGE_URL="https://img.shields.io/badge/pyright-${{ PYRIGHT_BADGE_COLOR }}.svg"
+        BADGE_URL="https://img.shields.io/badge/pyright-${{ env.PYRIGHT_BADGE_COLOR }}.svg"
         sed -i '/!\[Pyright Analysis\]/c\![Pyright Analysis]('"$BADGE_URL"')' README.md
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
