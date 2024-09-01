@@ -4,11 +4,11 @@ Second SE homework on Debugging
 ---
 
 
-![badge_pytest_status](https://img.shields.io/badge/PyTest-passing-brightgreen.svg)
-![badge_code_coverage](https://img.shields.io/badge/coverage-100%25-brightgreen.svg)
-![badge_total_tests](https://img.shields.io/badge/tests-7-brightgreen.svg)
-![badge_pylint](https://img.shields.io/badge/pylint-10.00-brightgreen.svg)
-![badge_pyright](https://img.shields.io/badge/pyright-passing-brightgreen.svg)
+![badge_pytest_status](https://img.shields.io/badge/PyTest-passing-brightgreen?logo=pytest)
+![badge_code_coverage](https://img.shields.io/badge/coverage-100%25-brightgreen)
+![badge_total_tests](https://img.shields.io/badge/tests-7-brightgreen?logo=pytest)
+![badge_pylint](https://img.shields.io/badge/pylint-10.00-brightgreen)
+![badge_pyright](https://img.shields.io/badge/pyright-passing-brightgreen)
 ![autopep8](https://img.shields.io/badge/code%20style-autopep8-brightgreen)
 
 ---
