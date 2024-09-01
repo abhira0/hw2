@@ -3,11 +3,13 @@ Second SE homework on Debugging
 
 ---
 
+
+![badge_pytest_status]()
+![badge_code_coverage]()
+![badge_total_tests]()
 ![badge_pylint]()
 ![badge_pyright]()
-![badge_total_tests]()
-![badge_code_coverage]()
-![badge_pytest_status]()
+![autopep8](https://img.shields.io/badge/code%20style-autopep8-brightgreen)
 
 ---
 ### Steps
