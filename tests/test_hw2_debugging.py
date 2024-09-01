@@ -51,3 +51,6 @@ def test_only_negatives_array():
     arr = [-i for i in range(1, 11)]
     merge_sorted_array = merge_sort(arr)
     assert merge_sorted_array == sorted(arr), "Array is not sorted"
+
+def test_fail():
+    assert False, "FAILING"
