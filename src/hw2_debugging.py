@@ -1,5 +1,5 @@
 """Module with very intense sorting :p. I'm kidding, its just mergesort!"""
-import src.rand as rand
+from src import rand
 
 
 def merge_sort(array:list[int]) -> list[int]:
