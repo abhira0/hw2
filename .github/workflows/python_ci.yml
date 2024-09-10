@@ -142,7 +142,7 @@ jobs:
       run: |
         sed -i '/!\[badge_pylint\]/c\![badge_pylint]('"$PYLINT_BADGE_URL"')' README.md
         sed -i '/!\[badge_pyright\]/c\![badge_pyright]('"$PYRIGHT_BADGE_URL"')' README.md
-        sed -i '/!\[badge_total_tests\]/c\![badge_total_tests]('"$TOTAL_TESTS_BADGE_URL"')](https://github.com/gitsetgopack/hw2/tree/main/tests)' README.md
+        sed -i '/\[!\[badge_total_tests\]/c\![badge_total_tests]('"$TOTAL_TESTS_BADGE_URL"')](https://github.com/gitsetgopack/hw2/tree/main/tests)' README.md
         sed -i '/!\[badge_code_coverage\]/c\![badge_code_coverage]('"$CODE_COVERAGE_BADGE_URL"')' README.md
         sed -i '/!\[badge_pytest_status\]/c\![badge_pytest_status]('"$PYTEST_STATUS_BADGE_URL"')' README.md
 
