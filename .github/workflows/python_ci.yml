@@ -136,7 +136,7 @@ jobs:
 
     - name: Update README with all the badges
       run: |
-        RUN_LOG_URL="https://github.com/${{ github.repository }}/hw2/actions/runs/${{ github.run_id }}"
+        RUN_LOG_URL="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
         sed -i '/\[!\[badge_pylint\]/c\[!\[badge_pylint\]('"$PYLINT_BADGE_URL"')]('"$RUN_LOG_URL"')' README.md
         sed -i '/\[!\[badge_pyright\]/c\[!\[badge_pyright\]('"$PYRIGHT_BADGE_URL"')]('"$RUN_LOG_URL"')' README.md
         sed -i '/\[!\[badge_total_tests\]/c\[!\[badge_total_tests\]('"$TOTAL_TESTS_BADGE_URL"')](https://github.com/gitsetgopack/hw2/tree/main/tests)' README.md
