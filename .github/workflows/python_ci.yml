@@ -124,7 +124,7 @@ jobs:
         fi
 
         # Generate badge URLs
-        TOTAL_TESTS_BADGE_URL="https://img.shields.io/badge/tests-${NUM_TESTS}-blue?logo=pytest&logoColor=white?link=https%3A%2F%2Fgithub.com%2Fgitsetgopack%2Fhw2%2Ftree%2Fmain%2Ftests"
+        TOTAL_TESTS_BADGE_URL="https://img.shields.io/badge/tests-${NUM_TESTS}-blue?logo=pytest&logoColor=white&link=https%3A%2F%2Fgithub.com%2Fgitsetgopack%2Fhw2%2Ftree%2Fmain%2Ftests"
         CODE_COVERAGE_BADGE_URL="https://img.shields.io/badge/coverage-${COVERAGE}%25-${COVERAGE_COLOR}?link=${RUN_LOG_URL}"
         PYTEST_STATUS_BADGE_URL="https://img.shields.io/badge/PyTest-${TESTS_STATUS}-${TESTS_COLOR}?logo=pytest&logoColor=white&link=${RUN_LOG_URL}"
 
