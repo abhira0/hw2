@@ -6,7 +6,7 @@ Second SE homework on Debugging
 
 #### Quality
 ![badge_pytest_status](https://img.shields.io/badge/PyTest-passing-brightgreen?logo=pytest&logoColor=white&link=https%3A%2F%2Fgithub.com%2Fgitsetgopack/hw2%2Fhw2%2Factions%2Fruns%2F10786054702)
-![badge_code_coverage](https://img.shields.io/badge/coverage-100%25-brightgreen?link=https%3A%2F%2Fgithub.com%2Fgitsetgopack/hw2%2Fhw2%2Factions%2Fruns%2F10786054702)
+[![badge_code_coverage](https://img.shields.io/badge/coverage-100%25-brightgreen?link=https%3A%2F%2Fgithub.com%2Fgitsetgopack/hw2%2Fhw2%2Factions%2Fruns%2F10786040643%2Fjob%2F)](https%3A%2F%2Fgithub.com%2Fgitsetgopack/hw2%2Fhw2%2Factions%2Fruns%2F10786040643%2Fjob%2F)
 ![badge_total_tests](https://img.shields.io/badge/tests-7-blue?logo=pytest&logoColor=white&link=https%3A%2F%2Fgithub.com%2Fgitsetgopack%2Fhw2%2Ftree%2Fmain%2Ftests)
 ![badge_pylint](https://img.shields.io/badge/pylint-10.00-brightgreen?link=https%3A%2F%2Fgithub.com%2Fgitsetgopack/hw2%2Fhw2%2Factions%2Fruns%2F10786054702)
 ![badge_pyright](https://img.shields.io/badge/pyright-passing-brightgreen?link=https%3A%2F%2Fgithub.com%2Fgitsetgopack/hw2%2Fhw2%2Factions%2Fruns%2F10786054702)
