@@ -5,11 +5,11 @@ Second SE homework on Debugging
 ---
 
 #### Quality
-[![badge_pytest_status](https://img.shields.io/badge/PyTest-passing-brightgreen?logo=pytest&logoColor=white)](https://github.com/gitsetgopack/hw2/actions/runs/10786727502)
-[![badge_code_coverage](https://img.shields.io/badge/coverage-100%25-brightgreen)](https://github.com/gitsetgopack/hw2/actions/runs/10786727502)
+[![badge_pytest_status](https://img.shields.io/badge/PyTest-passing-brightgreen?logo=pytest&logoColor=white)](https://github.com/gitsetgopack/hw2/actions/runs/10820161751)
+[![badge_code_coverage](https://img.shields.io/badge/coverage-100%25-brightgreen)](https://github.com/gitsetgopack/hw2/actions/runs/10820161751)
 [![badge_total_tests](https://img.shields.io/badge/tests-7-blue?logo=pytest&logoColor=white&link=https%3A%2F%2Fgithub.com%2Fgitsetgopack%2Fhw2%2Ftree%2Fmain%2Ftests)](https://github.com/gitsetgopack/hw2/tree/main/tests)
-[![badge_pylint](https://img.shields.io/badge/pylint-10.00-brightgreen)](https://github.com/gitsetgopack/hw2/actions/runs/10786727502)
-[![badge_pyright](https://img.shields.io/badge/pyright-passing-brightgreen)](https://github.com/gitsetgopack/hw2/actions/runs/10786727502)
+[![badge_pylint](https://img.shields.io/badge/pylint-10.00-brightgreen)](https://github.com/gitsetgopack/hw2/actions/runs/10820161751)
+[![badge_pyright](https://img.shields.io/badge/pyright-passing-brightgreen)](https://github.com/gitsetgopack/hw2/actions/runs/10820161751)
 
 #### Standards
 ![autopep8](https://img.shields.io/badge/code%20style-autopep8-blue)
