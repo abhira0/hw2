@@ -1,8 +1,8 @@
-# hw2
+# Homework 2
 Second SE homework on Debugging
 
 ---
-
+---
 
 #### Quality
 [![badge_pytest_status](https://img.shields.io/badge/PyTest-passing-brightgreen?logo=pytest&logoColor=white)](https://github.com/gitsetgopack/hw2/actions/runs/10786727502)
