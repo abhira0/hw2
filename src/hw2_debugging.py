@@ -1,5 +1,6 @@
 import random
 
+
 def mergeSort(arr):
     # Base case: if the array has only one element, it's already sorted
     if len(arr) <= 1:
@@ -14,6 +15,7 @@ def mergeSort(arr):
 
     # Merge the two sorted halves
     return recombine(left_sorted, right_sorted)
+
 
 def recombine(leftArr, rightArr):
     leftIndex = 0
@@ -42,8 +44,11 @@ def recombine(leftArr, rightArr):
     return mergeArr
 
 # Function to generate a random array of integers (you had a typo with rand)
+
+
 def random_array(size):
     return [random.randint(0, 100) for _ in range(size)]
+
 
 # Generate a random array of size 20
 arr = random_array(20)
