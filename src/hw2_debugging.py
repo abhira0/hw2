@@ -1,5 +1,6 @@
 """this module deals with the algorithm of merge sort."""
 
+
 def merge_sort(array):
     """This function merges all the sorted array."""
     # Base case: if the array has only one element, it's already sorted
@@ -15,6 +16,7 @@ def merge_sort(array):
 
     # Merge the two sorted halves
     return recombine(left_sorted, right_sorted)
+
 
 def recombine(left_array, right_array):
     """this function recombines two arrays."""
