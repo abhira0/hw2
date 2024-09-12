@@ -1,5 +1,5 @@
 import pytest
-from HW2.src.rand import random_array
+from src.rand import random_array
 
 def test_random_array_length():
     """Test that random_array doesn't change the length of the input array."""
