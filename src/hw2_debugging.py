@@ -1,55 +1,44 @@
-import random
+"""this module deals with the algorithm of merge sort."""
 
-def mergeSort(arr):
+def merge_sort(array):
+    """This function merges all the sorted array."""
     # Base case: if the array has only one element, it's already sorted
-    if len(arr) <= 1:
-        return arr
+    if len(array) <= 1:
+        return array
 
     # Find the midpoint of the array
-    half = len(arr) // 2
+    half = len(array) // 2
 
     # Recursively split the array into two halves and sort them
-    left_sorted = mergeSort(arr[:half])
-    right_sorted = mergeSort(arr[half:])
+    left_sorted = merge_sort(array[:half])
+    right_sorted = merge_sort(array[half:])
 
     # Merge the two sorted halves
     return recombine(left_sorted, right_sorted)
 
-def recombine(leftArr, rightArr):
-    leftIndex = 0
-    rightIndex = 0
-    mergeArr = [None] * (len(leftArr) + len(rightArr))
+def recombine(left_array, right_array):
+    """this function recombines two arrays."""
+    left_index = 0
+    right_index = 0
+    merge_array = [None] * (len(left_array) + len(right_array))
 
     # Merge the two arrays while both have elements to compare
-    while leftIndex < len(leftArr) and rightIndex < len(rightArr):
-        if leftArr[leftIndex] < rightArr[rightIndex]:
-            mergeArr[leftIndex + rightIndex] = leftArr[leftIndex]
-            leftIndex += 1
+    while left_index < len(left_array) and right_index < len(right_array):
+        if left_array[left_index] < right_array[right_index]:
+            merge_array[left_index + right_index] = left_array[left_index]
+            left_index += 1
         else:
-            mergeArr[leftIndex + rightIndex] = rightArr[rightIndex]
-            rightIndex += 1
+            merge_array[left_index + right_index] = right_array[right_index]
+            right_index += 1
 
     # Copy any remaining elements from the left array
-    while leftIndex < len(leftArr):
-        mergeArr[leftIndex + rightIndex] = leftArr[leftIndex]
-        leftIndex += 1
+    while left_index < len(left_array):
+        merge_array[left_index + right_index] = left_array[left_index]
+        left_index += 1
 
     # Copy any remaining elements from the right array
-    while rightIndex < len(rightArr):
-        mergeArr[leftIndex + rightIndex] = rightArr[rightIndex]
-        rightIndex += 1
+    while right_index < len(right_array):
+        merge_array[left_index + right_index] = right_array[right_index]
+        right_index += 1
 
-    return mergeArr
-
-# Function to generate a random array of integers (you had a typo with rand)
-def random_array(size):
-    return [random.randint(0, 100) for _ in range(size)]
-
-# Generate a random array of size 20
-arr = random_array(20)
-
-# Sort the array using mergeSort
-arr_out = mergeSort(arr)
-
-# Print the sorted array
-print(arr_out)
+    return merge_array
