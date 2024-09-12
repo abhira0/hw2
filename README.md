@@ -2,7 +2,6 @@
 Second SE homework on Debugging
 
 ---
----
 
 #### Quality
 [![badge_pytest_status](https://img.shields.io/badge/PyTest-failing-red?logo=pytest&logoColor=white)](https://github.com/gitsetgopack/hw2/actions/runs/10821886315)
@@ -35,6 +34,9 @@ Second SE homework on Debugging
 
 ---
 ### Steps
+<details>
+  <steps>For dev reference, click here.</steps>
+
 1. Install python requirements
    ```bash
    pip install -r requirements.txt
@@ -57,3 +59,4 @@ Second SE homework on Debugging
    ```bash
    pytest
    ```
+</details>
